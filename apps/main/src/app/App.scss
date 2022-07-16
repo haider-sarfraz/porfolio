@@ -1,0 +1,59 @@
+/* Your styles goes here. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --navHeight: 4rem;
+    @apply font-mono;
+}
+
+#root {
+    height: 100vh;
+    position: relative;
+}
+
+.AppContent {
+    @apply relative grid grid-cols-6 gap-8 md:gap-0;
+    height: calc(100vh - var(--navHeight));
+}
+
+.ThemeControl_Wrapper {
+    @apply flex flex-col justify-between h-[120px] w-[8rem] px-1 hover:cursor-pointer;
+}
+
+.ThemeControl_Control {
+    @apply w-8 hover:cursor-auto;
+}
+
+.ThemeControl_Option {
+    @apply py-1 px-2;
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+.ThemeControl_Light {
+    @apply bg-white text-black;
+    box-shadow: 1px 1px 4px #d4cdcd;
+    svg {
+        fill: white;
+        stroke: #000000;
+    }
+}
+.ThemeControl_Dark {
+    @apply border-black bg-black text-white;
+    box-shadow: 1px 1px 4px #000000;
+    svg {
+        fill: #000000;
+        stroke: #ffffff;
+    }
+}
+
+.Pages {
+    @apply col-span-6 md:col-span-4 xl:max-w-[65vw];
+}
+
+.PersonalPicture {
+    @apply hidden md:block self-center md:col-span-2 md:w-[15rem] md:h-[15rem] lg:w-[20rem] lg:h-[20rem] xl:w-[25rem] xl:h-[25rem];
+}
