@@ -1,22 +1,26 @@
+import { useState, FC } from "react";
 import { MenuIcon, XIcon } from "@heroicons/react/solid";
 import { motion } from "framer-motion";
-import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { AppMeta } from "../MetaData/App.meta";
 
-const {
-  styles,
-  title,
-  routes: AppRoutes,
-} = AppMeta;
+import { AppRoutes } from "../MetaData/AppRoutes";
 
-export const Navbar = () => {
+const styles = {
+  navWrapper: "h-[var(--navHeight)] flex justify-between items-center",
+  userName: "max-w-[20rem] min-w-[8rem] py-[4px] md:px-4 flex items-center justify-center font-[cursive] text-zinc-900 dark:text-gray-100 text-2xl md:text-xl lg:text-2xl",
+  navItem: "min-w-[8rem] py-[4px] flex items-center justify-center rounded-nav-item bg-gray-500 dark:bg-gray-200 text-white dark:text-zinc-900 hover:bg-gray-900 dark:hover:bg-white dark:hover:text-zinc-800",
+  navItems: "hidden md:flex md:gap-[2rem] lg:gap-[5rem] font-[cursive] md:text-md lg:text-xl text-semi-bold",
+  menuHamBurger: "block w-4 h-4 md:hidden w-8 dark:text-white",
+  activeNavItem: "w-[8rem] flex items-center justify-center bg-gray-700 dark:bg-zinc-600 text-white dark:text-white rounded-nav-item cursor-not-allowed",
+};
+
+export const Navbar:FC = () => {
   const { pathname } = useLocation();
   const [ open, toggleOpen ] = useState(false);
 
   return (
     <div role="navigation" className={styles.navWrapper}>
-      <span className={styles.userName}>{title}</span>
+      <title className={styles.userName}>@haider-sarfraz</title>
       <div className={styles.navItems}>
         {Object.keys(AppRoutes).map((key: string) => {
           const isSelected = AppRoutes[key] === pathname;

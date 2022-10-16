@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: ['./apps/**/**/*.{ts,tsx}', './projects/**/*.{ts,tsx}'],
   darkMode: 'media',
@@ -9,6 +10,7 @@ module.exports = {
       },
       height: {
         inherit: 'inherit',
+        "app-content": `calc(100vh - var(--navHeight))`,
       },
       borderRadius: {
         'nav-item': '3rem 0rem 3rem 0rem',
