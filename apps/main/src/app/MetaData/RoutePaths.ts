@@ -1,8 +1,8 @@
-interface AppRoutesInterface {
+interface RoutePaths {
     [key: string]: string
 };
 
-export const AppRoutes: AppRoutesInterface = {
+export const RoutePaths: RoutePaths = {
     "Home": "/",
     "About": "/about",
     "Projects": "/projects",

@@ -3,7 +3,7 @@ import { MenuIcon, XIcon } from "@heroicons/react/solid";
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 
-import { AppRoutes } from "../MetaData/AppRoutes";
+import { RoutePaths } from "../MetaData/RoutePaths";
 
 const styles = {
   navWrapper: "h-[var(--navHeight)] flex justify-between items-center",
@@ -22,12 +22,12 @@ export const Navbar:FC = () => {
     <div role="navigation" className={styles.navWrapper}>
       <title className={styles.userName}>@haider-sarfraz</title>
       <div className={styles.navItems}>
-        {Object.keys(AppRoutes).map((key: string) => {
-          const isSelected = AppRoutes[key] === pathname;
+        {Object.keys(RoutePaths).map((key: string) => {
+          const isSelected = RoutePaths[key] === pathname;
           return (
             <Link
               key={key}
-              to={AppRoutes[key]}
+              to={RoutePaths[key]}
               className={isSelected ? styles.activeNavItem : styles.navItem}
             >
               {key}
@@ -83,12 +83,12 @@ export const Navbar:FC = () => {
           <div className="absolute right-0 flex flex-col gap-4 py-4 px-2 w-[12rem] bg-black text-white h-screen top">
             <XIcon className="self-end w-4 h-4" onClick={() => toggleOpen(false)}/>
             <div className="flex flex-col gap-4">
-              {Object.keys(AppRoutes).map((key: string) => {
-                const isSelected = AppRoutes[key] === pathname;
+              {Object.keys(RoutePaths).map((key: string) => {
+                const isSelected = RoutePaths[key] === pathname;
                 return (
                   <Link
                     key={key}
-                    to={AppRoutes[key]}
+                    to={RoutePaths[key]}
                     className={isSelected ? "bg-white text-black" : "text-white"}
                   >
                     {key}
