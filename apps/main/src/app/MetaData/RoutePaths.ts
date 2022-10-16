@@ -1,9 +1,11 @@
-interface RoutePaths {
-    [key: string]: string
+export interface RoutePaths {
+    HOME: string
+    ABOUT: string
+    PROJECTS: string
 };
 
-export const RoutePaths: RoutePaths = {
-    "Home": "/",
-    "About": "/about",
-    "Projects": "/projects",
+export const routePaths: RoutePaths = {
+    HOME: "/",
+    ABOUT: "about",
+    PROJECTS: "projects",
 }
